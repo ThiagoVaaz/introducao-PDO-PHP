@@ -13,5 +13,3 @@ $uri = Uri::load();
 
 require Routes::load($routes, $uri);
  
-
-
