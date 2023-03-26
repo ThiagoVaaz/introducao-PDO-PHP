@@ -1,8 +1,9 @@
 <?php
 
+use app\models\User;
 
-
-echo ' teste';
+$user = new User;
+dd($user->all());
 
 require "../app/views/index.php";
 ?>

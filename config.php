@@ -3,7 +3,7 @@
 return [
     "db" => [
         'host' => 'localhost',
-        'dbname' => 'curso-pdo',
+        'dbname' => 'curso_pdo',
         'username' => 'root',
         'password' =>  'root',
         'charset' => 'utf8'
