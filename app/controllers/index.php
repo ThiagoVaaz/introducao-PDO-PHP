@@ -3,7 +3,11 @@
 use app\models\User;
 
 $user = new User;
-dd($user->all());
+$users = $user->all();
 
-require "../app/views/index.php";
+//$userEncontrado = $user->find('id',['id' => 3]);
+
+$layout->add('home');
+
+
 ?>

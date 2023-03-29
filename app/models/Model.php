@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use app\models\Connection;
+
 abstract class Model{
 
     protected $connection;
@@ -10,29 +12,34 @@ abstract class Model{
         $this->connection = Connection::connect();
     }    
 
-    public function all(){
-        $sql = "select * from {$this->table}";
-        $list = $this->connection->prepare($sql);
-        $list->execute();
 
-        return $list->fetchAll();
-    }
+	public function all() {
+		$sql = "select * from {$this->table} where id = :id";
 
-    public function find($field, $value){
-        $sql = "select * from {$this->table} where {$field} = ?";
-        $list = $this ->connection->prepare($sql);
-        $list->bindValue(1, $value);
-        $list->execute();
+		$list = $this->connection->prepare($sql);
 
-        return $list->fetch();
-    }
+		$list->bindValue(':id', 3);		
 
-    public function delete() {
-        $sql = "delete from {$this->table} where $field = ?";
-        $delete = $this ->connection->prepare($sql);
-        $delete->bindValue(1, $value);
-        $delete->execute();
+		$list->execute();
 
-        return $delete->rowCount();
+		return $list->fetch();
+	}
+
+	public function find($field, $paramters) {
+		$sql = "select * from {$this->table} where {$field} = :id";
+		$list = $this->connection->prepare($sql);
+		//$list->bindValue('id', $value);
+		$list->execute($paramters);
+
+		return $list->fetch();
+	}
+
+	public function delete() {
+		$sql = "delete from {$this->table} where $field = ?";
+		$delete = $this->connection->prepare($sql);
+		$delete->bindValue(1, $value);
+		$delete->execute();
+
+		return $delete->rowCount();
     }
 };

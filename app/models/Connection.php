@@ -7,12 +7,14 @@ class Connection {
 
     public static function connect() {
 
-        $config = require "../../config.php";
+		$config = require "../config.php";
 
-        $pdo = new PDO("mysql:host={$config['host']};dbname={$config['dname']}; charset={$config['charset']}", $config['username'], $config['password']);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-        return $pdo;
+		$pdo = new PDO("mysql:host={$config['db']['host']};dbname={$config['db']['dbname']};charset={$config['db']['charset']}", $config['db']['username'], $config['db']['password']);
+
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //indicação de erro, diz até onde está o erro
+		$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ); //
+
+		return $pdo;
 
     }
 }

@@ -10,7 +10,7 @@ class Routes {
         }
         
         
-        return "../app/{$routes[$uri]}";
+        return "../app/{$routes[$uri]}.php";
     }
 }
 

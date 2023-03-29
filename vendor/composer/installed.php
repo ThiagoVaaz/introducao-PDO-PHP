@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
+        'name' => '__root__',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
+        'reference' => '77004dfc230daec3d2d423f6ec25b14c62d7d4a1',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '94f261c473bbac253809e894a184cc86c410914c',
-        'name' => '__root__',
         'dev' => true,
     ),
     'versions' => array(
         '__root__' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
+            'reference' => '77004dfc230daec3d2d423f6ec25b14c62d7d4a1',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '94f261c473bbac253809e894a184cc86c410914c',
             'dev_requirement' => false,
         ),
     ),
