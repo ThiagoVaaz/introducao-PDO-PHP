@@ -3,8 +3,11 @@
 namespace app\models;
 
 use app\models\Connection;
+use app\traits\PersistDb;
 
 abstract class Model{
+
+	use PersistDb;
 
     protected $connection;
 
@@ -18,26 +21,32 @@ abstract class Model{
 
 		$list = $this->connection->prepare($sql);
 
-		$list->bindValue(':id', 3);		
+		$list->bindValue(':id', 6);		
 
 		$list->execute();
 
 		return $list->fetch();
 	}
 
-	public function find($field, $paramters) {
-		$sql = "select * from {$this->table} where {$field} = :id";
+	public function find($field, $value) {
+		$sql = "select * from {$this->table} where {$field} = :{$field}";
+		
 		$list = $this->connection->prepare($sql);
-		//$list->bindValue('id', $value);
-		$list->execute($paramters);
+		
+		$list->bindValue($field, $value);
+		
+		$list->execute();
 
 		return $list->fetch();
 	}
 
 	public function delete() {
 		$sql = "delete from {$this->table} where $field = ?";
+		
 		$delete = $this->connection->prepare($sql);
+		
 		$delete->bindValue(1, $value);
+		
 		$delete->execute();
 
 		return $delete->rowCount();

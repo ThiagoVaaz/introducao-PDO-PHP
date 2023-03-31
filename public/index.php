@@ -10,6 +10,8 @@ use app\classes\Uri;
 $routes = [
     '/' => 'controllers/index',
     '/create_user' => 'controllers/create_user',
+    '/user_store' => 'controllers/user_store',
+    '/user_edit' => 'controllers/user_edit',
 ];
 
 $uri = Uri::load();
