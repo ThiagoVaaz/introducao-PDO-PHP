@@ -18,4 +18,20 @@ class User extends Model {
 //        return $insert->execute();
 //    }
 
+
+//	 public function update(array $attributes) {
+
+  //       $sql = "update {$this->table} set name = :name, email = :email, password = :password where id = :id";
+
+   //      $update = $this->connection->prepare($sql);//
+
+     //    $update->execute($attributes);
+
+	 	//return $update->rowCount();
+     //}
 };
+
+
+///err objt stdclass
+
+//Err Model

@@ -2,19 +2,19 @@
 
 <form action="/user_update" method="POST" role="form">
     <div class="form-group">
-        <label for="">Nome</label>
+        <label for="">name</label>
         <input type="hidden" name="id" value="<?=$userEncontrado->id;?>">
-        <input type="text" class="form-control" name="name" value="">
+        <input type="text" class="form-control" name="name" value="<?=$userEncontrado->name;?>">
     </div>
     
     <div class="form-group">
-        <label for="">Email</label>
+        <label for="">email</label>
         <input type="text" class="form-control" name="email" value="<?=$userEncontrado->email;?>">
     </div>
     
     <div class="form-group">
-        <label for="">Password</label>
-        <input type="text" class="form-control" name="name" value="<?=$userEncontrado->password;?>">
+        <label for="">password</label>
+        <input type="text" class="form-control" name="password" value="<?=$userEncontrado->password;?>">
     </div>
     
     <button type="submit" class=" btn btn-primary">Cadastrar</button>

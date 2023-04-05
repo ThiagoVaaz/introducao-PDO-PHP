@@ -11,6 +11,7 @@ $routes = [
     '/' => 'controllers/index',
     '/create_user' => 'controllers/create_user',
     '/user_store' => 'controllers/user_store',
+    '/user_update' => 'controllers/user_update',
     '/user_edit' => 'controllers/user_edit',
 ];
 
